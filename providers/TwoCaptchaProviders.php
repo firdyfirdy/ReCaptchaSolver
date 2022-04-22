@@ -5,6 +5,7 @@ use TwoCaptcha\TwoCaptcha;
 
 require_once 'core/Captcha.php';
 require_once 'providers_library/2captcha/2captcha/src/autoloader.php';
+require_once 'providers_library/2captcha/2captcha/src/TwoCaptcha.php';
 
 class TwoCaptchaProviders extends Captcha
 {
@@ -26,7 +27,7 @@ class TwoCaptchaProviders extends Captcha
             ]);
             $this->is_success = true;
             $this->response = $result->code;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error_message = $e->getMessage();
         }
     }
